@@ -1,0 +1,35 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --primary-color: #007bff;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #f8f9fa;
+  --primary-color: #0d6efd;
+}
+
+body {
+  font-family: sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.content {
+  min-height: 100vh;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 3.6rem;
+  font-weight: 700;
+}
+
+.content p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.5;
+}

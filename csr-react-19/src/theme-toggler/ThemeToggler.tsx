@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { ThemeSwitcher } from "../../../web-components/theme-toggler";
+import { useTheme } from "./useTheme";
 
 if (typeof window !== "undefined" && !customElements.get("theme-switcher")) {
 	customElements.define("theme-switcher", ThemeSwitcher);
@@ -19,13 +19,13 @@ const customThemeConfig = {
 };
 
 export const ThemeToggler = () => {
-	const [theme, setReactTheme] = useState("system");
+	const { theme, setTheme } = useTheme();
 
 	const handleThemeChange = (
 		event: CustomEvent<{ theme: "light" | "dark"; isDark: boolean }>
 	) => {
 		console.log("[Working] Theme changed to:", event.detail.theme);
-		setReactTheme(event.detail.theme);
+		setTheme(event.detail.theme);
 	};
 
 	return (

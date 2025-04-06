@@ -2,6 +2,10 @@
 
 SPA consuming the `web-components/theme-toggler.js` showcasing all the problems with it in React 18
 
+Switch implementation in the `csr-react-18/src/App.tsx` to discover mismatch in state when using the `NotWorkingThemeToggler` instead of the `ThemeToggler`.
+
+Despite the `ThemeToggler` from the `import { NotWorkingThemeToggler } from "~/theme-toggler/ThemeToggler";` the theme is visually changing correctly, our React state is completely desynchronized - due to the callback not firing up.
+
 ## Setup
 
 Install the dependencies:

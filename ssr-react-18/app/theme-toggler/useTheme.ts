@@ -9,7 +9,7 @@ const createThemeStore = () => {
     }
     try {
       return localStorage.getItem("theme") || "system";
-    } catch (e) {
+    } catch {
       return "system";
     }
   };

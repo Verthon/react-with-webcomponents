@@ -21,6 +21,8 @@ const customThemeConfig = {
 export const NotWorkingThemeToggler = () => {
   const { theme, setTheme } = useTheme();
 
+  // useEffect runs only on the client, so we safely import and register the custom element here
+  // This workaround is necessary because, unlike Next.js, React Router doesn't provide a "use client" directive.
   useEffect(() => {
     import("../../../web-components/theme-toggler").then((module) => {
       const ThemeSwitcher = module.ThemeSwitcher;
@@ -65,6 +67,8 @@ export const ThemeToggler = () => {
     }
   >(null);
 
+  // useEffect runs only on the client, so we safely import and register the custom element here
+  // This workaround is necessary because, unlike Next.js, React Router doesn't provide a "use client" directive.
   useEffect(() => {
     import("../../../web-components/theme-toggler").then((module) => {
       const ThemeSwitcher = module.ThemeSwitcher;
